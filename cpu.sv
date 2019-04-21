@@ -287,6 +287,36 @@ always @(posedge clock) begin
                 is_jmp <= 0;
                 ex_op <= EX_OUT;
             end
+        opcodes::lshf: begin
+                alu_op <= alu::LSHF;
+                condition <= 3'b111;
+                immediate <= imm5;
+                use_immediate <= 1;
+                use_pc <= 0;
+                is_rti <= 0;
+                is_jmp <= 0;
+                ex_op <= EX_DSTR;
+            end
+        opcodes::rshfl: begin
+                alu_op <= alu::RSHFL;
+                condition <= 3'b111;
+                immediate <= imm5;
+                use_immediate <= 1;
+                use_pc <= 0;
+                is_rti <= 0;
+                is_jmp <= 0;
+                ex_op <= EX_DSTR;
+            end
+        opcodes::rshfa: begin
+                alu_op <= alu::RSHFA;
+                condition <= 3'b111;
+                immediate <= imm5;
+                use_immediate <= 1;
+                use_pc <= 0;
+                is_rti <= 0;
+                is_jmp <= 0;
+                ex_op <= EX_DSTR;
+            end
         default: begin
                 /* Issue a NOP. */
                 alu_op <= alu::ADD;
