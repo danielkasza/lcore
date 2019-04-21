@@ -270,7 +270,7 @@ always @(posedge clock) begin
         opcodes::in: begin
                 alu_op <= alu::ADD;
                 condition <= 3'b111;
-                immediate <= pcoffset9;
+                immediate <= 0;
                 use_immediate <= 0;
                 use_pc <= 0;
                 is_rti <= 0;
@@ -280,38 +280,58 @@ always @(posedge clock) begin
         opcodes::out: begin
                 alu_op <= alu::ADD;
                 condition <= 3'b111;
-                immediate <= pcoffset9;
+                immediate <= 0;
                 use_immediate <= 0;
                 use_pc <= 0;
                 is_rti <= 0;
                 is_jmp <= 0;
                 ex_op <= EX_OUT;
             end
-        opcodes::lshf: begin
-                alu_op <= alu::LSHF;
+        opcodes::lsl_rr: begin
+                alu_op <= alu::LSL;
                 condition <= 3'b111;
-                immediate <= imm5;
-                use_immediate <= 1;
+                immediate <= 0;
+                use_immediate <= 0;
                 use_pc <= 0;
                 is_rti <= 0;
                 is_jmp <= 0;
                 ex_op <= EX_DSTR;
             end
-        opcodes::rshfl: begin
-                alu_op <= alu::RSHFL;
+        opcodes::lsr_rr: begin
+                alu_op <= alu::LSR;
                 condition <= 3'b111;
-                immediate <= imm5;
-                use_immediate <= 1;
+                immediate <= 0;
+                use_immediate <= 0;
                 use_pc <= 0;
                 is_rti <= 0;
                 is_jmp <= 0;
                 ex_op <= EX_DSTR;
             end
-        opcodes::rshfa: begin
-                alu_op <= alu::RSHFA;
+        opcodes::mul_rr: begin
+                alu_op <= alu::MUL;
                 condition <= 3'b111;
-                immediate <= imm5;
-                use_immediate <= 1;
+                immediate <= 0;
+                use_immediate <= 0;
+                use_pc <= 0;
+                is_rti <= 0;
+                is_jmp <= 0;
+                ex_op <= EX_DSTR;
+            end
+        opcodes::or_rr: begin
+                alu_op <= alu::OR;
+                condition <= 3'b111;
+                immediate <= 0;
+                use_immediate <= 0;
+                use_pc <= 0;
+                is_rti <= 0;
+                is_jmp <= 0;
+                ex_op <= EX_DSTR;
+            end
+        opcodes::sub_rr: begin
+                alu_op <= alu::SUB;
+                condition <= 3'b111;
+                immediate <= 0;
+                use_immediate <= 0;
                 use_pc <= 0;
                 is_rti <= 0;
                 is_jmp <= 0;

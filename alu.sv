@@ -8,9 +8,11 @@ typedef enum bit [2:0] {
     ADD,
     AND,
     XOR,
-    LSHF,
-    RSHFL,
-    RSHFA
+    LSL,
+    LSR,
+    MUL,
+    OR,
+    SUB
 } op_t;
 endpackage
 
@@ -30,11 +32,11 @@ always @(*) begin
         alu::ADD:   result = a + b;
         alu::AND:   result = a & b;
         alu::XOR:   result = a ^ b; 
-        alu::LSHF:  result = a << b[3:0];
-        alu::RSHFL: result = a >> b[3:0];
-        alu::RSHFA: result = $signed(a) >>> b[3:0];
-
-        default:    result = 0;
+        alu::LSL:   result = a << b[3:0];
+        alu::LSR:   result = a >> b[3:0];
+        alu::MUL:   result = a * b;
+        alu::OR:    result = a | b;
+        alu::SUB:   result = a - b;
     endcase
 end
 endmodule

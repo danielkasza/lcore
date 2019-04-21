@@ -21,4 +21,4 @@ _LCORE_ is based on the LC-3 ISA with some changes:
 * Traps are not supported.
 * Memory mapped I/O is replaced with a dedicated I/O port.
 * `NOT` instruction is replaced with a more generic `XOR` instruction. `NOT` is a special case of this.
-* Reserved opcode is used to implement bit shift instructions. This extension is borrowed from LC-3b.
+* Reserved opcode is used to implement additional instructions.
