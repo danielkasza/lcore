@@ -280,7 +280,7 @@ always @(posedge clock) begin
         opcodes::out: begin
                 alu_op <= alu::ADD;
                 condition <= 3'b111;
-                immediate <= 0;
+                immediate <= pcoffset9;
                 use_immediate <= 0;
                 use_pc <= 0;
                 is_rti <= 0;
