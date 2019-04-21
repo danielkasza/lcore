@@ -1,8 +1,8 @@
-# _LCORE_ - Pipelined LC-3 CPU
+# _LCORE_ - Tiny pipelined 16b CPU
 
 Daniel Kasza - daniel@kasza.hu
 
-_LCORE_ is a small, pipelined implementation of the LC-3 CPU architecture. The CPU uses a 3-stage pipeline:
+The CPU uses a 3-stage pipeline:
 1. __IF__ - Instruction Fetch
 2. __DE__ - DEcode
 3. __EX__ - EXecute
@@ -14,6 +14,8 @@ This means that taking a branch has a 1 cycle penalty.
 Source registers are fetched during the EX stage.
 
 ## Differences from LC-3
+
+_LCORE_ is based on the LC-3 ISA with some changes:
 
 * `STI` and `LDI` instructions are not supported because the do not fit in the pipeline.
 * Traps are not supported.
