@@ -1,0 +1,8 @@
+obj_dir
+*.bin
+*.dbg
+*.lst
+*.obj_dir
+*.sym
+*.vconst
+*.obj
