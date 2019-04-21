@@ -186,7 +186,7 @@ always @(posedge clock) begin
                 use_pc <= 0;
                 is_rti <= 0;
                 is_jmp <= 1;
-                ex_op <= EX_NOP;
+                ex_op <= EX_CALL;
             end
         opcodes::ld: begin
                 alu_op <= alu::ADD;
