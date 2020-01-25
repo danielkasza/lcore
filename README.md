@@ -17,7 +17,7 @@ Source registers are fetched during the EX stage.
 
 _LCORE_ is based on the LC-3 ISA with some changes:
 
-* `STI` and `LDI` instructions are not supported because the do not fit in the pipeline.
+* `STI` and `LDI` instructions are not supported because they do not fit in the pipeline.
 * Traps are not supported.
 * Memory mapped I/O is replaced with a dedicated I/O port.
 * `NOT` instruction is replaced with a more generic `XOR` instruction. `NOT` is a special case of this.
